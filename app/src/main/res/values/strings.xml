@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ApplaudoCodeChallengeAndroid</string>
+    <string name="log_in">LOG IN</string>
+    <string name="log_in_subtitle">Sign in to you account</string>
+    <string name="toolbar_title">Tv Shows</string>
+    <string name="search_fragment_title">Search</string>
+    <string name="profile_fragment_title">Profile</string>
+    <string name="profile_fragment_tv1">Olivia W. Skinner</string>
+    <string name="profile_fragment_tv2">\@OliviaW_Skinner</string>
+    <string name="profile_fragment_tv3">My Favorites</string>
+    <string name="profile_fragment_btn">LOG OUT</string>
+    <string name="profile_fragment_dialog_text">Are you sure you want to leave?</string>
+    <string name="profile_fragment_dialog_button1">STAY</string>
+    <string name="profile_fragment_dialog_button2">LEAVE</string>
+    <string name="api_key">0d7348c8b3dd45a2092427607f2f0e77</string>
+    <string name="item_show_name_example">BOB ESPONJA</string>
+    <string name="item_show_name_average_title">Average</string>
+    <string name="home_fragment_btn1">Top Rated</string>
+    <string name="home_fragment_btn2">Popular</string>
+    <string name="home_fragment_btn3">On Tv</string>
+    <string name="home_fragment_btn4">Airing</string>
+</resources>
