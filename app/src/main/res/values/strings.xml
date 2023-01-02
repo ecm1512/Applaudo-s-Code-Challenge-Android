@@ -19,4 +19,5 @@
     <string name="home_fragment_btn2">Popular</string>
     <string name="home_fragment_btn3">On Tv</string>
     <string name="home_fragment_btn4">Airing</string>
+    <string name="detail_fragment_title">Summary</string>
 </resources>
