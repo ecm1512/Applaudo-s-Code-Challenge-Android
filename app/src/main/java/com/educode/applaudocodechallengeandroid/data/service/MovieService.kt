@@ -1,6 +1,7 @@
 package com.educode.applaudocodechallengeandroid.data.service
 
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MovieService {
@@ -43,4 +44,16 @@ interface MovieService {
         @Query("api_key")
         api_key: String
     ): BaseMovieResponseAiring
+
+    @GET("tv/{id}")
+    suspend fun getSeasons(
+        @Path("id")
+        id: Int,
+        @Query("page")
+        page: Int = 1,
+        @Query("language")
+        language: String = "es",
+        @Query("api_key")
+        api_key: String
+    ): BaseSeasonsResponse
 }

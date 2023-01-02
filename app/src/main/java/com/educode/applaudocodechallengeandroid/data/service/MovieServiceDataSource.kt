@@ -5,6 +5,7 @@ import com.educode.applaudocodechallengeandroid.data.toDomain
 import com.educode.applaudocodechallengeandroid.domain.entities.AiringToday
 import com.educode.applaudocodechallengeandroid.domain.entities.OnTheAir
 import com.educode.applaudocodechallengeandroid.domain.entities.Popular
+import com.educode.applaudocodechallengeandroid.domain.entities.Season
 import com.educode.applaudocodechallengeandroid.domain.entities.TopRated
 
 class MovieServiceDataSource: RemoteDataSource {
@@ -36,6 +37,15 @@ class MovieServiceDataSource: RemoteDataSource {
         return MovieClient.service.getTvOnTheAirShows(
             api_key = apiKey
         ).results.map {
+            it.toDomain()
+        }
+    }
+
+    override suspend fun getSeasonByShow(apiKey: String, id: Int): List<Season> {
+        return MovieClient.service.getSeasons(
+            id = id,
+            api_key = apiKey
+        ).seasons.map {
             it.toDomain()
         }
     }

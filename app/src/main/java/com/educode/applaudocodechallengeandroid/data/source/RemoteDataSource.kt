@@ -3,6 +3,7 @@ package com.educode.applaudocodechallengeandroid.data.source
 import com.educode.applaudocodechallengeandroid.domain.entities.AiringToday
 import com.educode.applaudocodechallengeandroid.domain.entities.OnTheAir
 import com.educode.applaudocodechallengeandroid.domain.entities.Popular
+import com.educode.applaudocodechallengeandroid.domain.entities.Season
 import com.educode.applaudocodechallengeandroid.domain.entities.TopRated
 
 interface RemoteDataSource {
@@ -10,4 +11,6 @@ interface RemoteDataSource {
     suspend fun getPopularShows(apiKey: String): List<Popular>
     suspend fun getTopRatedShows(apiKey: String): List<TopRated>
     suspend fun getTvOnTheAirShows(apiKey: String): List<OnTheAir>
+
+    suspend fun getSeasonByShow(apiKey: String, id: Int): List<Season>
 }

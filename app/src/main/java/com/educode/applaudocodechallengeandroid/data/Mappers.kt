@@ -4,6 +4,7 @@ import com.educode.applaudocodechallengeandroid.data.database.AiringToday
 import com.educode.applaudocodechallengeandroid.data.database.Popular
 import com.educode.applaudocodechallengeandroid.data.database.TopRated
 import com.educode.applaudocodechallengeandroid.data.database.OnTheAir
+import com.educode.applaudocodechallengeandroid.data.service.Season
 
 fun AiringToday.toDomain(): com.educode.applaudocodechallengeandroid.domain.entities.AiringToday =
     com.educode.applaudocodechallengeandroid.domain.entities.AiringToday(
@@ -131,4 +132,12 @@ fun com.educode.applaudocodechallengeandroid.domain.entities.TopRated.toRoomEnti
     posterPath,
     backdropPath,
     voteAverage
+)
+
+fun Season.toDomain(): com.educode.applaudocodechallengeandroid.domain.entities.Season = com.educode.applaudocodechallengeandroid.domain.entities.Season(
+    id,
+    name,
+    number,
+    overview ?: "",
+    posterPath
 )
