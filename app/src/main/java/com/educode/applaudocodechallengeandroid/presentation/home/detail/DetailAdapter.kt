@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.educode.applaudocodechallengeandroid.databinding.ItemSeasonBinding
 import com.educode.applaudocodechallengeandroid.domain.entities.Season
@@ -38,9 +39,16 @@ class DetailAdapter: RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
 
     class DetailViewHolder(private val binding: ItemSeasonBinding): RecyclerView.ViewHolder(binding.root){
         fun setDataCard(season: Season){
+
+            val circularProgressDrawable = CircularProgressDrawable(binding.root.context)
+            circularProgressDrawable.strokeWidth = 5f
+            circularProgressDrawable.centerRadius = 30f
+            circularProgressDrawable.start()
+
             Glide.with(binding.root.context)
                 .load("https://image.tmdb.org/t/p/w500${season.posterPath}")
                 .centerCrop()
+                .placeholder(circularProgressDrawable)
                 .into(binding.imageSeason)
             binding.tvNumberEpisodes.text = season.number.toString()
             binding.tvSeasonOverview.text = season.overview

@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.ActivityNavigator
 import androidx.navigation.fragment.findNavController
 import com.educode.applaudocodechallengeandroid.R
 import com.educode.applaudocodechallengeandroid.databinding.FragmentProfileBinding

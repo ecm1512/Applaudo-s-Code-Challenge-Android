@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.educode.applaudocodechallengeandroid.databinding.ItemShowBinding
 import com.educode.applaudocodechallengeandroid.domain.entities.Show
@@ -37,9 +38,16 @@ class HomeAdapter(private var listenerShowItem: (Show) -> Unit): RecyclerView.Ad
 
     class HomeViewHolder(private val binding: ItemShowBinding): RecyclerView.ViewHolder(binding.root){
         fun setDataCard(show: Show){
+
+            val circularProgressDrawable = CircularProgressDrawable(binding.root.context)
+            circularProgressDrawable.strokeWidth = 5f
+            circularProgressDrawable.centerRadius = 30f
+            circularProgressDrawable.start()
+
             Glide.with(binding.root.context)
                 .load("https://image.tmdb.org/t/p/w500${show.posterPath}")
                 .centerCrop()
+                .placeholder(circularProgressDrawable)
                 .into(binding.imageShow)
             binding.showName.text = show.name
             binding.average.text = show.voteAverage.toString()
